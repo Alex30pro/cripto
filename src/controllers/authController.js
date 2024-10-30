@@ -20,10 +20,11 @@ exports.login = async (req, res) => {
         if (!usuario || !(await usuario.compararSenhas(senha))) {
             return res.status(400).send("Credenciais inválidas.");
         }
-        
-        const token = jwt.sign({ id: usuario._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        console.log(process.env.JWT_SECRET)
+        const token = jwt.sign({ id: usuario._id }, "leigo" , { expiresIn: '1h' });
         res.json({ token });
     } catch (err) {
+        console.log(err)
         res.status(500).send("Erro no servidor.");
     }
 };

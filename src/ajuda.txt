@@ -1,1 +1,7 @@
 npm install express mongoose bcryptjs jsonwebtoken dotenv
+localhost:5000/api/auth/login
+
+{
+  "email": "edi@gmail.com",
+  "senha": "alex"
+}
